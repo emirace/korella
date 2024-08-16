@@ -9,10 +9,7 @@ import Navbar from "@/components/Navbar";
 export const Contact: React.FC = () => {
   return (
     <>
-      <div className="hidden md:block">
-        <Navbar />
-      </div>
-      <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <div className="flex justify-center items-center min-h-screen bg-white md:pt-36">
         <div className="bg-white p-8 rounded-lg shadow-md max-w-10xl w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>

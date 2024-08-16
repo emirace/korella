@@ -4,9 +4,9 @@ import ArrowRight from "@/assets/arrow-right.svg";
 import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import Wave from "@/assets/wave.svg";
+import Wave from "@/assets/wave.png";
 import secondImage from "@/assets/second-home.png";
-import Navbar from "@/components/Navbar";
+import Image from "next/image";
 
 export const Hero = () => {
   const heroRef = useRef(null);
@@ -19,19 +19,15 @@ export const Hero = () => {
   return (
     <section
       ref={heroRef}
-      className="relative flex flex-col items-center justify-center h-screen text-center bg-gradient-to-b from-blue-900 to-black overflow-hidden"
+      className="relative flex flex-col items-center justify-center   text-center bg-gradient-to-b from-blue-900 to-black overflow-hidden"
     >
-      <div className="hidden md:block">
-        <Navbar />
-      </div>
-
       {/* Hero Content */}
-      <div className="container relative z-10 text-white text-center">
-        <div className="text-sm inline-flex border border-white/10 px-3 py-1 rounded-lg tracking-tight mb-10">
+      <div className="container relative z-10 text-white text-center pt-20 md:pt-48">
+        <div className="text-sm inline-flex border bg-white text-black border-white/10 px-3 py-1 rounded-lg tracking-tight mb-10">
           Discover how AI can transform your business
         </div>
         <div className="">
-          <h1 className="text-2xl md:text-8xl font-bold tracking-tighter bg-gradient-to-b from-white to-gray-300 text-transparent bg-clip-text mt-6 px-2">
+          <h1 className="text-2xl md:text-6xl font-bold tracking-tighter bg-gradient-to-b from-white to-gray-300 text-transparent bg-clip-text mt-6 px-2">
             Empowering Your Business with AI-Driven Insights
           </h1>
           <p className="mt-4 text-lg text-gray-300 md:text-xl">
@@ -46,6 +42,7 @@ export const Hero = () => {
           </div>
         </div>
       </div>
+      <Image src={Wave} alt="Korella AI Logo" />
     </section>
   );
 };
