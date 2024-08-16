@@ -35,8 +35,12 @@ export const Pricing = () => {
       <div className="container">
         <div className="flex flex-col gap-6 items-center mt-10 lg:flex-row lg:items-end lg:justify-center">
           {pricingTiers.map(
-            ({ monthlyPrice, buttonText, popular, inverse, features }) => (
+            (
+              { monthlyPrice, buttonText, popular, inverse, features },
+              index
+            ) => (
               <div
+                key={index} // Key prop added here
                 className={cn(
                   "p-10 border border-solid border-[#222222] rounded-3xl max-w-xs w-full",
                   { "bg-[#222222] text-white": inverse === true }
@@ -85,8 +89,11 @@ export const Pricing = () => {
                   {buttonText}
                 </Button>
                 <ul className="flex flex-col gap-5 mt-8 text-white text-4xl">
-                  {features.map((feature, index) => (
-                    <li key={index} className="text-sm flex items-center gap-4">
+                  {features.map((feature, featureIndex) => (
+                    <li
+                      key={featureIndex}
+                      className="text-sm flex items-center gap-4"
+                    >
                       <span>{feature}</span>
                     </li>
                   ))}

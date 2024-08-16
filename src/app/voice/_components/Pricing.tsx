@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 
 const pricingTiers = [
   {
+    id: 1, // Add an id for a unique key
     monthlyPrice: "5.90",
     buttonText: "Get started",
     popular: false,
@@ -14,6 +15,7 @@ const pricingTiers = [
     features: ["For usage less 50 hours per month"],
   },
   {
+    id: 2, // Add an id for a unique key
     monthlyPrice: "5.60",
     buttonText: "Get started",
     popular: true,
@@ -21,6 +23,7 @@ const pricingTiers = [
     features: ["For usage less than 100 hours per month"],
   },
   {
+    id: 3, // Add an id for a unique key
     monthlyPrice: "4.90",
     buttonText: "Get started",
     popular: false,
@@ -35,8 +38,9 @@ export const Pricing = () => {
       <div className="container">
         <div className="flex flex-col gap-6 items-center mt-10 lg:flex-row lg:items-end lg:justify-center">
           {pricingTiers.map(
-            ({ monthlyPrice, buttonText, popular, inverse, features }) => (
+            ({ id, monthlyPrice, buttonText, popular, inverse, features }) => (
               <div
+                key={id} // Add the key prop here
                 className={cn(
                   "p-10 border border-solid border-[#222222] rounded-3xl max-w-xs w-full",
                   { "bg-[#222222] text-white": inverse === true }

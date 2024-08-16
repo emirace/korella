@@ -8,7 +8,7 @@ import Image from "next/image";
 export const Hero = () => {
   return (
     <section
-      className="relative flex flex-col items-start max-w-screen-lg mx-auto p-6 lg:p-0 gap-16 opacity-100"
+      className="relative flex flex-col items-start max-w-screen-lg mx-auto p-6 lg:p-0 gap-16 opacity-100 font-space-grotesk"
       style={{ top: "220px" }}
     >
       <div className="text-left">
