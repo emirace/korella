@@ -9,15 +9,11 @@ import Navbar from "@/components/Navbar";
 export default function Home() {
   return (
     <>
-      <div className="block md:hidden">
-        <Navbar />
-      </div>
+      <Navbar />
       <Hero />
       <SecondSection />
       <SpeechAnalysis />
-      <div className="min-h-screen bg-black flex flex-col items-center py-10 px-4">
-        <FeatureSection />
-      </div>
+      <FeatureSection />
       <ThirdSection />
       <Footer />
     </>

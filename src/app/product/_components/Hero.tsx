@@ -18,19 +18,13 @@ export const Hero = () => {
   const translateY = useTransform(scrollYProgress, [0, 1], [200, -200]);
 
   return (
-    <section
-      ref={heroRef}
-      className="relative mt-8 pb-20 md:pt-5 md:pb-10 bg-black"
-    >
-      <div className="hidden md:block">
-        <Navbar />
-      </div>
+    <section ref={heroRef} className="relative pb-20 pt-20 md:pb-10 bg-black">
       <div className="absolute inset-0 flex justify-center items-center">
         <div className="bg-[radial-gradient(circle,#fff_0.2_1px,transparent_1px)] bg-[size:10px_10px] w-[50%] h-[50%] opacity-30"></div>
       </div>
       <div className="container relative z-10 text-white">
         <div className="md:flex items-center">
-          <div className="md:w-[478px]">
+          <div className="md:flex-1 md:p-10">
             <div className="text-sm inline-flex border border-white/10 px-3 py-1 rounded-lg tracking-tight">
               Discover how AI can transform your business
             </div>

@@ -8,6 +8,7 @@ import {
   FaHandHoldingUsd,
 } from "react-icons/fa";
 import { ReactNode } from "react";
+import { Star, Sparkles } from "lucide-react";
 
 interface Feature {
   icon: ReactNode;
@@ -69,16 +70,17 @@ const featuresData: FeatureData[] = [
 
 const FeatureCard = ({ title, description, features }: FeatureData) => {
   return (
-    <div className="flex justify-between bg-[#222222] p-6 md:p-8 lg:p-10 rounded-lg md:w-[1000px] h-[240px] shadow-[inset_0px_0px_20px_0px_#54545433]">
-      <div className="flex flex-col justify-left w-[100px]">
-        <h2 className="font-space-grotesk text-1xl md:text-2xl font-semibold text-white mb-4">
+    <div className="flex flex-col md:flex-row gap-4 md:items-center md:justify-between bg-[#222222] p-6  rounded-lg w-full">
+      <div className="flex flex-col justify-left md:w-3/5">
+        <Star className="text-white mb-4 h-6 w-6" />
+        <h2 className="font-space-grotesk text-1xl md:text-2xl font-semibold text-white mb-4 ">
           {title}
         </h2>
-        <p className="font-space-grotesk text-1xl md:text-1xl text-white">
+        <p className="font-space-grotesk text-1xl md:text-1xl text-white max-w-md">
           {description}
         </p>
       </div>
-      <div className="flex flex-col space-y-2 md:space-y-0 md:space-x-4 mt-4 md:mt-0">
+      <div className="flex flex-col md:w-2/5 space-y-4">
         {features.map((feature, index) => (
           <div
             key={index}
@@ -97,20 +99,22 @@ const FeatureCard = ({ title, description, features }: FeatureData) => {
 
 export const FeatureSection: NextPage = () => {
   return (
-    <div className="min-h-screen bg-black flex flex-col items-center py-10 px-4 text-left">
-      <h1 className="font-space-grotesk text-1xl md:text-5xl font-semibold text-white mb-10 text-left">
-        Key Features
-      </h1>
-      <div className="lg:[grid gap-6 w-full max-w-6xl grid-cols-1 md:grid-cols-1] flex flex-col">
-        {featuresData.map((feature, index) => (
-          <FeatureCard
-            key={index}
-            title={feature.title}
-            description={feature.description}
-            features={feature.features}
-          />
-        ))}
+    <section className="w-full bg-black">
+      <div className="min-h-screen max-w-screen-xl mx-auto py-10 px-4 text-left">
+        <h1 className="font-space-grotesk text-1xl md:text-5xl font-semibold text-white mb-10 text-left">
+          Key Features
+        </h1>
+        <div className="flex flex-col gap-10">
+          {featuresData.map((feature: any, index) => (
+            <FeatureCard
+              key={index}
+              title={feature.title}
+              description={feature.description}
+              features={feature.features}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
